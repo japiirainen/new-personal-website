@@ -9,9 +9,9 @@ const colors = {
 	},
 }
 const styles = {
-	global: props => ({
+	global: ({ colorMode }: { colorMode: 'dark' | 'light' }) => ({
 		'html, body': {
-			bg: props.colorMode === 'dark' ? 'gray.800' : 'white',
+			bg: colorMode === 'dark' ? 'gray.800' : 'white',
 		},
 	}),
 }
