@@ -5,7 +5,7 @@ type colorModeT = { colorMode: 'dark' } | { colorMode: 'light' }
 const styles = {
 	global: ({ colorMode }: colorModeT) => ({
 		'html, body': {
-			bg: colorMode === 'dark' ? 'gray.800' : 'white',
+			bg: colorMode === 'dark' ? 'gray.900' : 'white',
 		},
 	}),
 }
@@ -24,6 +24,13 @@ const colors = {
 		500: '#22D900',
 		600: '#1CB200',
 		700: '#168C00',
+	},
+	neonPurple: {
+		100: '#fbf8fd',
+		200: '#ab20fd',
+		300: '#7d12ff',
+		400: '#200589',
+		500: '#000000',
 	},
 }
 

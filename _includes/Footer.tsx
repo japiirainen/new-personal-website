@@ -1,4 +1,4 @@
-import { Flex, Text, Link as ChakraLink, Icon } from '@chakra-ui/react'
+import { Flex, Text, Link as ChakraLink, Icon, useColorModeValue } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { ImInstagram, ImGithub, ImTwitter, ImLinkedin2 } from 'react-icons/im'
 import { config } from 'api'
@@ -11,7 +11,7 @@ const FooterLinks: React.FC = () => {
 					<a>blog</a>
 				</NextLink>
 			</ChakraLink>
-			<ChakraLink mx={2} fontFamily={'main'} fontSize={20}>
+			<ChakraLink mx={1} fontFamily={'main'} fontSize={20}>
 				<NextLink href={'/about'}>
 					<a>about me</a>
 				</NextLink>
@@ -57,6 +57,7 @@ const FooterSocials: React.FC = () => {
 }
 
 export const Footer: React.FC = () => {
+	const footerColor = useColorModeValue('gray.100', 'neonPurple.200')
 	return (
 		<Flex
 			as={'footer'}
@@ -67,8 +68,8 @@ export const Footer: React.FC = () => {
 			w={'100%'}
 			alignItems={'center'}
 			direction={{ base: 'column-reverse', md: 'row' }}
-			mb={2}
-			bg={'gray.100'}
+			pb={2}
+			bg={footerColor}
 			justifyContent={'space-around'}
 		>
 			<Flex

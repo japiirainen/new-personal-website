@@ -1,14 +1,14 @@
 import { Box } from '@chakra-ui/react'
 import DefaultLayout from '../_layouts/default'
+import matter from 'gray-matter'
 
 interface indexIf {
-	title: string
-	description: string
+	blogPostData: any
 }
 
-const IndexPage: React.FC<indexIf> = ({ title, description }) => {
+const IndexPage: React.FC<indexIf> = ({ blogPostData }) => {
 	return (
-		<DefaultLayout title={title} description={description}>
+		<DefaultLayout title={'Joona Piirainen'} description={'Personal website'}>
 			<Box>foo</Box>
 			<Box>bar</Box>
 		</DefaultLayout>
@@ -18,14 +18,18 @@ const IndexPage: React.FC<indexIf> = ({ title, description }) => {
 export default IndexPage
 
 export async function getStaticProps() {
-	// const blogNr1 = await octo.request('GET /gists/{gist_id}', {
-	// 	gist_id: '9d7a006b8b521629f92e1d1aae34f5e2',
-	// })
-	// console.log('blog', blogNr1)
+	const res = await fetch('https://api.github.com/users/japiirainen/gists')
+	const data = await res.json()
+	const files = data.map(v => v.files)
+	const filenames = files.flatMap(Object.keys)
+	const rawUrls = files.map((v, i) => v[filenames[i]].raw_url)
+	const res2 = await Promise.all(rawUrls.map(url => fetch(url)))
+	const jsons = await Promise.all(res2.map((v: any) => v.text()))
+	const blogPostData = jsons.map(v => matter(v).data)
+
 	return {
 		props: {
-			title: 'foo',
-			description: 'bar',
+			blogPostData,
 		},
 	}
 }

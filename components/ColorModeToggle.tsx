@@ -6,18 +6,20 @@ export const ColorModeToggle = () => {
 	const { toggleColorMode, colorMode } = useColorMode()
 	const whichIcon = colorMode === 'dark' ? FaRegSun : FaRegMoon
 	const iconColor = useColorModeValue('blue.800', 'yellow.300')
+	const hoverBg = useColorModeValue('neonGreen.100', 'neonPurple.200')
 	const icon = <Icon as={whichIcon} w={8} h={8} color={iconColor} />
 
 	return (
 		<IconButton
+			mt={{ base: 2, md: 2 }}
 			h={'100%'}
 			icon={icon}
 			aria-label={'color-mode-toggle'}
 			onClick={toggleColorMode}
 			bg={'inherit'}
 			_focus={{ border: 'none' }}
-			_hover={{ background: 'neonGreen.100' }}
-			pr={2}
+			_hover={{ background: hoverBg }}
+			p={2}
 		/>
 	)
 }

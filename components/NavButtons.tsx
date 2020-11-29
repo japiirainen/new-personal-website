@@ -1,17 +1,18 @@
-import { border, Box, Button, useColorModeValue } from '@chakra-ui/react'
+import { Box, Button, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import router from 'next/router'
 
 const NavButton: React.FC<{ label: string; href: string }> = ({ label, href }) => {
-	const hoverBg = useColorModeValue('neonGreen.100', 'neonGreen.200')
+	const hoverBg = useColorModeValue('neonGreen.100', 'neonPurple.100')
+	const bg = useColorModeValue('neonGreen.200', 'neonPurple.200')
 	const buttonTextColor = useColorModeValue('black', 'white')
 	return (
 		<Button
 			mx={1}
 			border={'1px'}
 			borderColor={'black'}
-			bg={'inherit'}
-			_hover={{ background: hoverBg }}
+			bg={bg}
+			_hover={{ background: hoverBg, color: 'black' }}
 			color={buttonTextColor}
 			onClick={() => router.push(href)}
 		>

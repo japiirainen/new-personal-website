@@ -1,16 +1,40 @@
-import { Flex, Heading, useColorModeValue } from '@chakra-ui/react'
+import { Flex, useBreakpointValue, useColorModeValue } from '@chakra-ui/react'
 import { ColorModeToggle } from 'components/ColorModeToggle'
 import { Navbuttons } from 'components/NavButtons'
 import { NavHeader } from 'components/NavHeader'
 import React from 'react'
 
+const NavContent = () => {
+	const navItems = useBreakpointValue({
+		base: (
+			<Flex direction={'column'} w={'100%'}>
+				<Flex direction={'row'} justifyContent={'space-between'}>
+					<NavHeader />
+					<ColorModeToggle />
+				</Flex>
+				<Flex justify={'center'} mb={2}>
+					<Navbuttons />
+				</Flex>
+			</Flex>
+		),
+		md: (
+			<>
+				<NavHeader />
+				<Navbuttons />
+				<ColorModeToggle />
+			</>
+		),
+	})
+	return <>{navItems}</>
+}
+
 export const Nav: React.FC = ({ children }) => {
-	const navbg = useColorModeValue('neonGreen.400', 'neonGreen.600')
+	const navbg = useColorModeValue('neonGreen.400', 'neonPurple.300')
 	return (
 		<Flex
 			as={'nav'}
 			w={'100%'}
-			h={'4rem'}
+			h={'auto'}
 			minH={'4rem'}
 			rounded={'sm'}
 			justifyContent={'space-between'}
@@ -24,9 +48,7 @@ export const Nav: React.FC = ({ children }) => {
 			borderBottom={'1px'}
 			borderBottomColor={'black'}
 		>
-			<NavHeader />
-			<Navbuttons />
-			<ColorModeToggle />
+			<NavContent />
 			{children}
 		</Flex>
 	)
