@@ -1,12 +1,11 @@
-import { Flex, Heading, Icon, useBreakpointValue, useColorModeValue } from '@chakra-ui/react'
+import { Flex, Heading, useColorModeValue } from '@chakra-ui/react'
 import { ColorModeToggle } from 'components/ColorModeToggle'
+import { Navbuttons } from 'components/NavButtons'
+import { NavHeader } from 'components/NavHeader'
 import React from 'react'
-import { Gi3DGlasses } from 'react-icons/gi'
-
-const NavIcon = () => <Icon as={Gi3DGlasses} mb={2} mr={2} />
 
 export const Nav: React.FC = ({ children }) => {
-	const navbg = useColorModeValue('#39FF14', '#1CB200')
+	const navbg = useColorModeValue('neonGreen.400', 'neonGreen.600')
 	return (
 		<Flex
 			as={'nav'}
@@ -25,10 +24,8 @@ export const Nav: React.FC = ({ children }) => {
 			borderBottom={'1px'}
 			borderBottomColor={'black'}
 		>
-			<Heading mt={3} mx={3} size={'lg'} fontFamily={'navHeader'}>
-				<NavIcon />
-				Joona Piirainen
-			</Heading>
+			<NavHeader />
+			<Navbuttons />
 			<ColorModeToggle />
 			{children}
 		</Flex>

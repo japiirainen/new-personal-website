@@ -1,5 +1,4 @@
-import { Box, Button, useColorMode } from '@chakra-ui/react'
-import { getConfig } from '../api/index'
+import { Box } from '@chakra-ui/react'
 import DefaultLayout from '../_layouts/default'
 
 interface indexIf {
@@ -8,14 +7,10 @@ interface indexIf {
 }
 
 const IndexPage: React.FC<indexIf> = ({ title, description }) => {
-	const { toggleColorMode, colorMode } = useColorMode()
-
 	return (
 		<DefaultLayout title={title} description={description}>
-			<Box>lol</Box>
-			<Button onClick={toggleColorMode}>
-				Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-			</Button>
+			<Box>foo</Box>
+			<Box>bar</Box>
 		</DefaultLayout>
 	)
 }

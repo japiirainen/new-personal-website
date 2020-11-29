@@ -15,9 +15,21 @@ const config = {
 	initialColorMode: 'light',
 }
 
+const colors = {
+	neonGreen: {
+		100: '#9AFF87',
+		200: '#79FF60',
+		300: '#59FF3A',
+		400: '#39FF14',
+		500: '#22D900',
+		600: '#1CB200',
+		700: '#168C00',
+	},
+}
+
 const fonts = {
 	navHeader: 'Roboto Mono, monospace',
 	main: 'Ubuntu, monospace',
 }
 
-export const theme = extendTheme({ config, styles, fonts })
+export const theme = extendTheme({ config, styles, fonts, colors })
