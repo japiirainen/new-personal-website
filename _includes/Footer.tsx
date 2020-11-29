@@ -3,20 +3,20 @@ import NextLink from 'next/link'
 import { ImInstagram, ImGithub, ImTwitter, ImLinkedin2 } from 'react-icons/im'
 import { config } from 'api'
 
-const FooterNextLinks: React.FC = () => {
+const FooterLinks: React.FC = () => {
 	return (
-		<Flex direction={'row'}>
-			<ChakraLink mx={2} fontFamily={'main'} fontSize={18}>
+		<Flex direction={'row'} justifyContent={{ base: 'center', md: 'flex-start' }} mb={2}>
+			<ChakraLink mx={2} fontFamily={'main'} fontSize={20}>
 				<NextLink href={'/blog'}>
 					<a>blog</a>
 				</NextLink>
 			</ChakraLink>
-			<ChakraLink mx={2} fontFamily={'main'} fontSize={18}>
+			<ChakraLink mx={2} fontFamily={'main'} fontSize={20}>
 				<NextLink href={'/about'}>
 					<a>about me</a>
 				</NextLink>
 			</ChakraLink>
-			<ChakraLink mx={2} fontFamily={'main'} fontSize={18}>
+			<ChakraLink mx={2} fontFamily={'main'} fontSize={20}>
 				<NextLink href={'/contact'}>
 					<a>contact</a>
 				</NextLink>
@@ -62,17 +62,32 @@ export const Footer: React.FC = () => {
 			as={'footer'}
 			position={'absolute'}
 			bottom={0}
-			h={100}
+			h={{ base: 120, md: 100 }}
 			borderTop={'1px'}
 			w={'100%'}
-			justifyContent={'space-between'}
 			alignItems={'center'}
+			direction={{ base: 'column-reverse', md: 'row' }}
+			mb={2}
+			bg={'gray.100'}
+			justifyContent={'space-around'}
 		>
-			<Flex direction={'column'} mr={'auto'} ml={2}>
-				<Text fontFamily={'main'}>© 2020 Joona Piirainen All Rights Reserved</Text>
-				<FooterNextLinks />
+			<Flex
+				direction={'column'}
+				alignContent={{ base: 'center' }}
+				mr={'auto'}
+				ml={{ base: 'auto', md: 2 }}
+			>
+				<FooterLinks />
+				<Text fontFamily={'main'} fontSize={{ base: 'sm', md: 'md' }}>
+					© 2020 Joona Piirainen All Rights Reserved
+				</Text>
 			</Flex>
-			<Flex ml={'auto'} mr={2}>
+			<Flex
+				ml={'auto'}
+				mt={{ base: 2, md: 0 }}
+				mr={{ base: 'auto', md: 2 }}
+				alignContent={{ base: 'center' }}
+			>
 				<FooterSocials />
 			</Flex>
 		</Flex>
