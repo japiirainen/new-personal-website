@@ -1,6 +1,8 @@
 import Head from 'next/head'
-import { Header } from '../_includes/header'
+import { Nav } from '../_includes/Nav'
 import { Footer } from '../_includes/Footer'
+import { Box } from '@chakra-ui/react'
+import { Main } from '_includes/Main'
 
 interface defaultLayoutIf {
 	title: string
@@ -9,15 +11,15 @@ interface defaultLayoutIf {
 
 const DefaultLayout: React.FC<defaultLayoutIf> = ({ description, title, children }) => {
 	return (
-		<main>
+		<Box>
 			<Head>
 				<title>{title}</title>
 				<meta name="description" content={description} />
 			</Head>
-			<Header />
-			{children}
+			<Nav />
+			<Main variant={'medium'}>{children}</Main>
 			<Footer />
-		</main>
+		</Box>
 	)
 }
 

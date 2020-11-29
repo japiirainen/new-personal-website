@@ -1,15 +1,9 @@
 import { extendTheme } from '@chakra-ui/react'
 
-// 2. Extend the theme to include custom colors, fonts, etc
-const colors = {
-	brand: {
-		900: '#1a365d',
-		800: '#153e75',
-		700: '#2a69ac',
-	},
-}
+type colorModeT = { colorMode: 'dark' } | { colorMode: 'light' }
+
 const styles = {
-	global: ({ colorMode }: { colorMode: 'dark' | 'light' }) => ({
+	global: ({ colorMode }: colorModeT) => ({
 		'html, body': {
 			bg: colorMode === 'dark' ? 'gray.800' : 'white',
 		},
@@ -21,4 +15,9 @@ const config = {
 	initialColorMode: 'light',
 }
 
-export const theme = extendTheme({ colors, config, styles })
+const fonts = {
+	navHeader: 'Roboto Mono, monospace',
+	main: 'Ubuntu, monospace',
+}
+
+export const theme = extendTheme({ config, styles, fonts })

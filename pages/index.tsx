@@ -1,7 +1,6 @@
 import { Box, Button, useColorMode } from '@chakra-ui/react'
 import { getConfig } from '../api/index'
 import DefaultLayout from '../_layouts/default'
-import { Octokit } from '@octokit/rest'
 
 interface indexIf {
 	title: string
@@ -24,21 +23,14 @@ const IndexPage: React.FC<indexIf> = ({ title, description }) => {
 export default IndexPage
 
 export async function getStaticProps() {
-	const config = await getConfig()
-	const octo = new Octokit()
-	const gists = await octo.request('GET /users/{username}/gists', {
-		username: 'japiirainen',
-	})
-	const gistIds = gists.data.map(v => v.id)
-	console.log(gistIds)
 	// const blogNr1 = await octo.request('GET /gists/{gist_id}', {
 	// 	gist_id: '9d7a006b8b521629f92e1d1aae34f5e2',
 	// })
 	// console.log('blog', blogNr1)
 	return {
 		props: {
-			title: config.title,
-			description: config.description,
+			title: 'foo',
+			description: 'bar',
 		},
 	}
 }
