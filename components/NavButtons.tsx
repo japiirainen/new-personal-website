@@ -9,12 +9,12 @@ const NavButton: React.FC<{ label: string; href: string }> = ({ label, href }) =
 	return (
 		<Button
 			mx={1}
-			border={'1px'}
-			borderColor={'black'}
+			style={{ borderRadius: 0 }}
 			bg={bg}
-			_hover={{ background: hoverBg, color: 'black' }}
+			_hover={{ background: hoverBg, color: 'black', border: '2px', borderColor: 'black' }}
 			color={buttonTextColor}
 			onClick={() => router.push(href)}
+			fontFamily={'main'}
 		>
 			{label}
 		</Button>

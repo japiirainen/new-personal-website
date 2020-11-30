@@ -18,7 +18,7 @@ export const ColorModeToggle = () => {
 			onClick={toggleColorMode}
 			bg={'inherit'}
 			_focus={{ border: 'none' }}
-			_hover={{ background: hoverBg }}
+			_hover={{ background: hoverBg, border: '2px', borderColor: 'black' }}
 			p={2}
 		/>
 	)

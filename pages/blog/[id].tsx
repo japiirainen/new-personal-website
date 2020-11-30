@@ -12,7 +12,8 @@ const Post: React.FC<postIf> = ({ contents, description, title }) => {
 
 export default Post
 
-export async function getStaticProps() {
+export async function getStaticProps({ params: { id } }) {
+	//fetch md here with id
 	return {
 		props: {
 			title: 'foo',
@@ -23,12 +24,12 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-	return {
-		paths: [
-			{ params: { slug: 'foo' } },
-			{ params: { slug: 'bar' } },
-			{ params: { slug: 'baz' } },
-		],
-		fallback: false,
-	}
+	const res = await fetch('https://api.github.com/users/japiirainen/gists')
+	const data = await res.json()
+
+	const paths = data.map(v => ({
+		params: { id: v.id },
+	}))
+
+	return { paths, fallback: false }
 }

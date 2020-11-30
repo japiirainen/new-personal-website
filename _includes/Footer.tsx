@@ -11,7 +11,7 @@ const FooterLinks: React.FC = () => {
 					<a>blog</a>
 				</NextLink>
 			</ChakraLink>
-			<ChakraLink mx={1} fontFamily={'main'} fontSize={20}>
+			<ChakraLink mx={2} fontFamily={'main'} fontSize={20}>
 				<NextLink href={'/about'}>
 					<a>about me</a>
 				</NextLink>
