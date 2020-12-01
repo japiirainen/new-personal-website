@@ -23,7 +23,7 @@ export const config: configIf = {
 export const getAllPosts = async () => {
 	const res = await fetch('https://api.github.com/users/japiirainen/gists', {
 		headers: {
-			Authorization: 'c0291a24479240145eaadb065bf9211437937a77',
+			Authorization: process.env.GITHUB_TOKEN,
 		},
 	})
 	const data = await res.json()
@@ -39,7 +39,7 @@ export const getAllPosts = async () => {
 export const getPostById = async id => {
 	const res = await fetch(`https://api.github.com/gists/${id}`, {
 		headers: {
-			Authorization: 'c0291a24479240145eaadb065bf9211437937a77',
+			Authorization: process.env.GITHUB_TOKEN,
 		},
 	})
 	const data = await res.json()
