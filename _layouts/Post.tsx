@@ -12,18 +12,20 @@ interface defaultLayoutIf {
 
 const PostLayout: React.FC<defaultLayoutIf> = ({ title, description, contents }) => {
 	return (
-		<DefaultLayout title={title} description={description}>
+		<Box>
 			<Head>
 				<title>{title}</title>
 			</Head>
-			<Main variant={'medium'}>
-				<Heading>{title}</Heading>
-				<Box dangerouslySetInnerHTML={{ __html: contents }} />
-				<Box>
-					<Link href={'/'}>Home</Link>
-				</Box>
-			</Main>
-		</DefaultLayout>
+			<DefaultLayout title={title} description={description}>
+				<Main variant={'medium'}>
+					<Heading>{title}</Heading>
+					<Box dangerouslySetInnerHTML={{ __html: contents }} />
+					<Box>
+						<Link href={'/'}>Home</Link>
+					</Box>
+				</Main>
+			</DefaultLayout>
+		</Box>
 	)
 }
 

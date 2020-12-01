@@ -23,7 +23,7 @@ const IndexPage: React.FC<indexIf> = ({ postData }) => {
 			<Heading fontFamily={'main'} w={'100%'} my={5}>
 				Recent blog posts
 			</Heading>
-			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
+			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} pb={180}>
 				{postData.map((v, i) => {
 					return (
 						<NextLink key={i} href={{ pathname: '/blog/[id]', query: { id: v.id } }}>
