@@ -1,10 +1,10 @@
 import { Flex, Heading, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react'
 import DefaultLayout from '../_layouts/default'
-import matter from 'gray-matter'
+import { getAllPosts } from 'api'
 import Image from 'next/image'
 import NextLink from 'next/link'
 
-interface postFrontMatterIf {
+export interface postFrontMatterIf {
 	title: string
 	slug: string
 	date: string
@@ -55,12 +55,16 @@ const IndexPage: React.FC<indexIf> = ({ postData }) => {
 										height={50}
 									/>
 									<Flex pt={2}>
-										<Text>posted on:</Text>
-										<Text ml={'auto'}>read time:</Text>
+										<Text fontFamily={'main'}>posted on:</Text>
+										<Text ml={'auto'} fontFamily={'main'}>
+											read time:
+										</Text>
 									</Flex>
 									<Flex pt={1}>
-										<Text>{v.date}</Text>
-										<Text ml={'auto'}>{v.readTime}</Text>
+										<Text fontFamily={'main'}>{v.date}</Text>
+										<Text ml={'auto'} fontFamily={'main'}>
+											{v.readTime}
+										</Text>
 									</Flex>
 								</Flex>
 							</a>
@@ -75,16 +79,7 @@ const IndexPage: React.FC<indexIf> = ({ postData }) => {
 export default IndexPage
 
 export async function getStaticProps() {
-	const res = await fetch('https://api.github.com/users/japiirainen/gists')
-	const data = await res.json()
-	const files = data.map(v => v.files)
-	const filenames = files.flatMap(Object.keys)
-	const rawUrls = files.map((v, i) => v[filenames[i]].raw_url)
-	const res2 = await Promise.all(rawUrls.map(url => fetch(url)))
-	const jsons = await Promise.all(res2.map((v: any) => v.text()))
-	const blogPostData = jsons.map(v => matter(v).data)
-	const postData = blogPostData.map((v, i) => ({ ...v, id: data[i].id }))
-	console.log(data)
+	const postData = await getAllPosts()
 
 	return {
 		props: {

@@ -2,14 +2,20 @@ import { Box, Button, useColorModeValue } from '@chakra-ui/react'
 import React from 'react'
 import router from 'next/router'
 
-const NavButton: React.FC<{ label: string; href: string }> = ({ label, href }) => {
+export const NavButton: React.FC<{ label: string; href: string; mx: number; my: number }> = ({
+	label,
+	href,
+	mx,
+	my,
+}) => {
 	const hoverBg = useColorModeValue('neonGreen.100', 'neonPurple.100')
 	const bg = useColorModeValue('neonGreen.200', 'neonPurple.200')
 	const hoverBorderColor = useColorModeValue('black', 'white')
 	const buttonTextColor = useColorModeValue('black', 'white')
 	return (
 		<Button
-			mx={1}
+			mx={mx}
+			my={my}
 			style={{ borderRadius: 0 }}
 			bg={bg}
 			_hover={{
@@ -30,9 +36,9 @@ const NavButton: React.FC<{ label: string; href: string }> = ({ label, href }) =
 export const Navbuttons = () => {
 	return (
 		<Box mt={3}>
-			<NavButton label={'Blog'} href={'/blog'} />
-			<NavButton label={'About me'} href={'/about'} />
-			<NavButton label={'Contact'} href={'/contact'} />
+			<NavButton mx={1} my={0} label={'Blog'} href={'/blog'} />
+			<NavButton mx={1} my={0} label={'About me'} href={'/about'} />
+			<NavButton mx={1} my={0} label={'Contact'} href={'/contact'} />
 		</Box>
 	)
 }
