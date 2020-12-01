@@ -14,8 +14,8 @@ export const Main: React.FC<mainProps> = ({ variant, children }) => {
 			pt={{ base: 40, md: 20 }}
 			mx={'auto'}
 			maxW={variant === 'narrow' ? '400px' : variant === 'medium' ? '800px' : '1200px'}
-			w={'100%'}
-			h={'100%'}
+			w={'95%'}
+			h={'auto'}
 			minH={'100vh'}
 			bg={mainBg}
 		>

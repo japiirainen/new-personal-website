@@ -13,11 +13,11 @@ interface postFrontMatterIf {
 	readTime: string
 }
 interface indexIf {
-	postData: postFrontMatterIf[]
+	postData: Array<postFrontMatterIf>
 }
 
 const IndexPage: React.FC<indexIf> = ({ postData }) => {
-	const postHoverBg = useColorModeValue('neonGreen.100', 'neonPurple.100')
+	const postHoverBg = useColorModeValue('neonGreen.100', 'neonPurple.200')
 	return (
 		<DefaultLayout title={'Joona Piirainen'} description={'Personal website'}>
 			<Heading fontFamily={'main'} w={'100%'} my={5}>
@@ -55,6 +55,10 @@ const IndexPage: React.FC<indexIf> = ({ postData }) => {
 										height={50}
 									/>
 									<Flex pt={2}>
+										<Text>posted on:</Text>
+										<Text ml={'auto'}>read time:</Text>
+									</Flex>
+									<Flex pt={1}>
 										<Text>{v.date}</Text>
 										<Text ml={'auto'}>{v.readTime}</Text>
 									</Flex>
