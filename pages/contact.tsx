@@ -34,17 +34,14 @@ const ContactPage: React.FC = () => {
 	)
 }
 
+const validateField = fieldName => value => {
+	if (!value) {
+		return `${fieldName} is required`
+	}
+}
+
 const ContactForm: React.FC = () => {
 	const formW = useBreakpointValue({ base: '100%', md: '90%' })
-	function validateName(value) {
-		let error
-		if (!value) {
-			error = 'Name is required'
-		} else if (value !== 'Naruto') {
-			error = 'Jeez! You´re not a fan 😱'
-		}
-		return error
-	}
 
 	return (
 		<Formik
@@ -58,7 +55,7 @@ const ContactForm: React.FC = () => {
 		>
 			{props => (
 				<Form style={{ width: formW }}>
-					<Field name="message" validate={validateName}>
+					<Field name="message">
 						{({ field, form }) => (
 							<FormControl isInvalid={form.errors.message && form.touched.message}>
 								<FormLabel htmlFor="message" fontFamily={'main'}>
@@ -76,7 +73,7 @@ const ContactForm: React.FC = () => {
 						)}
 					</Field>
 					<Flex>
-						<Field name="email" validate={validateName}>
+						<Field name="email" validate={validateField('Email')}>
 							{({ field, form }) => (
 								<FormControl isInvalid={form.errors.email && form.touched.email}>
 									<FormLabel htmlFor="email" fontFamily={'main'}>
@@ -87,7 +84,7 @@ const ContactForm: React.FC = () => {
 								</FormControl>
 							)}
 						</Field>
-						<Field name="name" validate={validateName}>
+						<Field name="name" validate={validateField('Name')}>
 							{({ field, form }) => (
 								<FormControl isInvalid={form.errors.name && form.touched.name}>
 									<FormLabel htmlFor="name" fontFamily={'main'}>
