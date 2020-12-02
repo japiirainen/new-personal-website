@@ -5,6 +5,7 @@ import { Main } from '_includes/Main'
 import Image from 'next/image'
 import hydrate from 'next-mdx-remote/hydrate'
 import { NavButton } from 'components/NavButtons'
+import router from 'next/router'
 
 interface defaultLayoutIf {
 	title: string
@@ -48,7 +49,7 @@ const PostLayout: React.FC<defaultLayoutIf> = ({
 					<Text mt={10} fontFamily={'main'}>
 						{c}
 					</Text>
-					<NavButton mx={-1} my={5} href={'/'} label={'<- back home'} />
+					<NavButton mx={-1} my={5} onClick={() => router.push('/')} label={'<- back home'} />
 				</Main>
 			</DefaultLayout>
 		</Box>
