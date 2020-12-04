@@ -51,3 +51,13 @@ export const getPostById = async id => {
 		content: matter(post).content,
 	}
 }
+
+export const sendContactEmail = async (message: string, email: string, name: string) => {
+	const res = await fetch('/api/contact', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify({ message, email, name }),
+	})
+	const json = await res.json()
+	return json
+}
