@@ -1,0 +1,30 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: jpcom
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: jpcom
+  template:
+    metadata:
+      labels:
+        app: jpcom
+    spec:
+      containers:
+        - name: jpcom
+          image: japiirainen/jpcom:0.1
+          imagePullSecrets:
+          - name: regcred
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+      restartPolicy: Always
