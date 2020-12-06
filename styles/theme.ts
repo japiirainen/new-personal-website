@@ -7,6 +7,36 @@ const styles = {
 		'html, body': {
 			bg: colorMode === 'dark' ? 'gray.900' : 'white',
 		},
+		'div#blogpost': {
+			pre: {
+				bg: colorMode === 'dark' ? 'gray.700' : 'gray.100',
+				p: 5,
+				color: colorMode === 'dark' ? 'white' : 'black',
+				borderRadius: '2%',
+				fontSize: 14,
+				wordWrap: 'normal',
+				overflow: 'auto',
+				whiteSpace: 'pre',
+			},
+			h1: {
+				fontSize: 35,
+			},
+			h2: {
+				fontSize: 30,
+			},
+			h3: {
+				fontSize: 26,
+			},
+			ul: {
+				ml: 10,
+			},
+			p: {
+				my: 10,
+			},
+			a: {
+				color: 'blue',
+			},
+		},
 	}),
 }
 

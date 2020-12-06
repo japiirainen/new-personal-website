@@ -26,7 +26,6 @@ const PostLayout: React.FC<defaultLayoutIf> = ({
 }) => {
 	const c = hydrate(contents)
 	const mt = useBreakpointValue({ base: -150, md: -10 })
-	console.log(date)
 	return (
 		<Box pb={200}>
 			<Head>
@@ -34,7 +33,10 @@ const PostLayout: React.FC<defaultLayoutIf> = ({
 			</Head>
 			<DefaultLayout title={title} description={slug}>
 				<Main variant={'medium'}>
-					<Flex mt={mt} justifyContent={'space-between'}>
+					<Flex mt={mt}>
+						<NavButton onClick={() => router.push('/blog')} label={'<- Other blog posts'} />
+					</Flex>
+					<Flex justifyContent={'space-between'} h={5}>
 						<Text fontFamily={'main'}>published:</Text>
 						<Text fontFamily={'main'}>read time:</Text>
 					</Flex>
@@ -46,10 +48,22 @@ const PostLayout: React.FC<defaultLayoutIf> = ({
 						{title}
 					</Heading>
 					<Image src={image} layout={'responsive'} height={'60px'} width={'100%'} />
-					<Text mt={10} fontFamily={'main'}>
+					<Box
+						as={'div'}
+						id={'blogpost'}
+						mt={10}
+						fontFamily={'main'}
+						fontSize={17}
+						wordBreak={'break-word'}
+					>
 						{c}
-					</Text>
-					<NavButton mx={-1} my={5} onClick={() => router.push('/')} label={'<- back home'} />
+					</Box>
+					<NavButton
+						mx={-1}
+						my={5}
+						onClick={() => router.push('/blog')}
+						label={'<- Other blog posts'}
+					/>
 				</Main>
 			</DefaultLayout>
 		</Box>

@@ -6,10 +6,15 @@ metadata:
   name: jpcom-service
 spec:
   selector:
-    app: jpcom
+    app: jpcom-deployment
   sessionAffinity: None
   type: NodePort
   ports:
-  - port: 80
+  - name: http
+    port: 80
     protocol: TCP
+    targetPort: 3000
+  - name: https
+    protocol: TCP
+    port: 443
     targetPort: 3000
