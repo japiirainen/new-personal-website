@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:15-alpine3.11
 
 # create & set working directory
 RUN mkdir -p /usr/src
@@ -13,7 +13,7 @@ RUN yarn
 # start app
 RUN yarn build
 EXPOSE 3000
-CMD yarn start
+CMD [ "yarn", "start" ]
 
 
 
