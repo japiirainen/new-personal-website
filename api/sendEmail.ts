@@ -3,10 +3,11 @@ import nodemailer from 'nodemailer'
 const constructMsg = (name: string, message: string) => `${message} from ${name}`
 
 export async function sendEmail(contacter: string, message: string, name: string): Promise<void> {
+	console.log(process.env.EMAIL_USER)
+	console.log(process.env.EMAIL_PASSWORD)
 	const transporter = nodemailer.createTransport({
 		host: 'smtp.gmail.com',
 		auth: {
-			type: 'login',
 			user: process.env.EMAIL_USER,
 			pass: process.env.EMAIL_PASSWORD,
 		},
