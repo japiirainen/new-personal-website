@@ -6,6 +6,7 @@ export async function sendEmail(contacter: string, message: string, name: string
 	const transporter = nodemailer.createTransport({
 		host: 'smtp.gmail.com',
 		auth: {
+			type: 'login',
 			user: process.env.EMAIL_USER,
 			pass: process.env.EMAIL_PASSWORD,
 		},
