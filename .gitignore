@@ -13,6 +13,8 @@
 # production
 /build
 
+/k8s
+
 # misc
 .DS_Store
 *.pem
