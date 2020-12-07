@@ -7,9 +7,10 @@ import { Main } from '_includes/Main'
 interface defaultLayoutIf {
 	title: string
 	description: string
+	pb?: number
 }
 
-const DefaultLayout: React.FC<defaultLayoutIf> = ({ description, title, children }) => {
+const DefaultLayout: React.FC<defaultLayoutIf> = ({ description, title, pb, children }) => {
 	return (
 		<Box>
 			<Head>
@@ -17,7 +18,9 @@ const DefaultLayout: React.FC<defaultLayoutIf> = ({ description, title, children
 				<meta name="description" content={description} />
 			</Head>
 			<Nav />
-			<Main variant={'medium'}>{children}</Main>
+			<Main variant={'medium'} pb={pb}>
+				{children}
+			</Main>
 			<Footer />
 		</Box>
 	)

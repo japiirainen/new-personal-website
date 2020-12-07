@@ -31,7 +31,7 @@ const ContactPage: React.FC = () => {
 				</Heading>
 				<ContactForm done={done} setDone={setDone} />
 			</Flex>
-			<Box pb={200}>
+			<Box pb={180} pt={5}>
 				<Image src={imageUrl} layout={'responsive'} height={200} width={300} />
 			</Box>
 		</DefaultLayout>
@@ -97,7 +97,7 @@ const ContactForm: React.FC<ContactForm> = ({ done, setDone }) => {
 								<Textarea
 									{...field}
 									id="message"
-									placeholder="Here is a sample placeholder"
+									placeholder="Write your message here! :-)"
 									size="lg"
 								/>
 								<FormErrorMessage>{form.errors.message}</FormErrorMessage>
@@ -111,7 +111,7 @@ const ContactForm: React.FC<ContactForm> = ({ done, setDone }) => {
 									<FormLabel htmlFor="email" fontFamily={'main'}>
 										Email
 									</FormLabel>
-									<Input {...field} id="email" placeholder="email" />
+									<Input {...field} id="email" placeholder="Your email" />
 									<FormErrorMessage>{form.errors.email}</FormErrorMessage>
 								</FormControl>
 							)}
@@ -122,7 +122,7 @@ const ContactForm: React.FC<ContactForm> = ({ done, setDone }) => {
 									<FormLabel htmlFor="name" fontFamily={'main'}>
 										Your name
 									</FormLabel>
-									<Input {...field} id="name" placeholder="name" />
+									<Input {...field} id="name" placeholder="Your name" />
 									<FormErrorMessage>{form.errors.name}</FormErrorMessage>
 								</FormControl>
 							)}

@@ -5,9 +5,10 @@ type mainVariant = 'narrow' | 'medium' | 'wide'
 
 interface mainProps {
 	variant: mainVariant
+	pb?: number
 }
 
-export const Main: React.FC<mainProps> = ({ variant, children }) => {
+export const Main: React.FC<mainProps> = ({ variant, pb = 0, children }) => {
 	const mainBg = useColorModeValue('white', 'gray.900')
 	return (
 		<Box
@@ -18,6 +19,7 @@ export const Main: React.FC<mainProps> = ({ variant, children }) => {
 			h={'auto'}
 			minH={'100vh'}
 			bg={mainBg}
+			pb={pb}
 		>
 			{children}
 		</Box>

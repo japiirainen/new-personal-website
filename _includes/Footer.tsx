@@ -1,4 +1,4 @@
-import { Flex, Text, Link as ChakraLink, Icon, useColorModeValue } from '@chakra-ui/react'
+import { Flex, Text, Link as ChakraLink, Icon, useColorModeValue, chakra } from '@chakra-ui/react'
 import NextLink from 'next/link'
 import { ImInstagram, ImGithub, ImTwitter, ImLinkedin2 } from 'react-icons/im'
 import { config } from 'api'
@@ -6,19 +6,25 @@ import { config } from 'api'
 const FooterLinks: React.FC = () => {
 	return (
 		<Flex direction={'row'} justifyContent={{ base: 'center', md: 'flex-start' }} mb={2}>
-			<ChakraLink mx={2} fontFamily={'main'} fontSize={20}>
+			<ChakraLink>
 				<NextLink href={'/blog'}>
-					<a>blog</a>
+					<chakra.a fontFamily={'main'} fontSize={20} mx={2}>
+						blog
+					</chakra.a>
 				</NextLink>
 			</ChakraLink>
-			<ChakraLink mx={2} fontFamily={'main'} fontSize={20}>
+			<ChakraLink>
 				<NextLink href={'/about'}>
-					<a>about me</a>
+					<chakra.a fontFamily={'main'} fontSize={20} mx={2}>
+						about me
+					</chakra.a>
 				</NextLink>
 			</ChakraLink>
-			<ChakraLink mx={2} fontFamily={'main'} fontSize={20}>
+			<ChakraLink>
 				<NextLink href={'/contact'}>
-					<a>contact</a>
+					<chakra.a fontFamily={'main'} fontSize={20} mx={2}>
+						contact
+					</chakra.a>
 				</NextLink>
 			</ChakraLink>
 		</Flex>
