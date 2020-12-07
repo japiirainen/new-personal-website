@@ -1,6 +1,4 @@
 import matter from 'gray-matter'
-import dotenv from 'dotenv'
-dotenv.config()
 export interface configIf {
 	title: string
 	description: string
