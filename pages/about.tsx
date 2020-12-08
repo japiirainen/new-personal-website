@@ -12,7 +12,7 @@ import DefaultLayout from '_layouts/default'
 import { GrBrush, GrReactjs } from 'react-icons/gr'
 import { IconType } from 'react-icons/lib'
 import { FaLanguage } from 'react-icons/fa'
-import { IoLogoJavascript, IoLogoNodejs } from 'react-icons/io'
+import { IoLogoJavascript, IoLogoNodejs, IoIosBeer, IoIosBicycle } from 'react-icons/io'
 import { SiTypescript, SiHaskell, SiClojure, SiPython, SiKubernetes } from 'react-icons/si'
 import { BiServer } from 'react-icons/bi'
 import { AiOutlineCloudServer } from 'react-icons/ai'
@@ -33,15 +33,41 @@ const MyListItem: React.FC<{ label: string; icon: IconType; desc: string }> = ({
 	)
 }
 
+const PersonalInfo: React.FC = () => {
+	const headingSize = useBreakpointValue({ base: 'md', md: 'lg' })
+	const heading2Size = useBreakpointValue({ base: 'sm', md: 'md' })
+	return (
+		<>
+			<Heading size={headingSize} fontFamily={'main'} textAlign={'center'}>
+				About Joona...
+			</Heading>
+			<Flex my={5} flexDirection={'column'} border={'1px'}>
+				<Heading size={heading2Size} fontFamily={'main'} p={4}>
+					Hobbies
+					<Icon as={IoIosBicycle} />
+				</Heading>
+				<UnorderedList spacing={3} p={2}>
+					<MyListItem
+						label={'Drinking beer'}
+						desc={'This is my favorite hobby'}
+						icon={IoIosBeer}
+					/>
+				</UnorderedList>
+			</Flex>
+		</>
+	)
+}
+
 const ContactPage: React.FC = () => {
 	const headingSize = useBreakpointValue({ base: 'md', md: 'lg' })
 	const heading2Size = useBreakpointValue({ base: 'sm', md: 'md' })
 	return (
 		<DefaultLayout description={'about me'} title={'about'} pb={200}>
+			<PersonalInfo />
 			<Heading size={headingSize} fontFamily={'main'} textAlign={'center'}>
-				Skill I have acquired during my time developing software
+				Tech skill I have acquired during my time developing software
 			</Heading>
-			<Flex mt={5} flexDirection={'column'} border={'1px'}>
+			<Flex mt={5} pl={3} flexDirection={'column'} border={'1px'}>
 				<Heading size={heading2Size} fontFamily={'main'} p={4}>
 					Programming languages <Icon as={FaLanguage} />
 				</Heading>
