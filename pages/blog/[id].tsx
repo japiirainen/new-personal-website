@@ -24,7 +24,6 @@ const Post: React.FC<postIf> = ({ data, content }) => {
 export default Post
 
 export async function getStaticProps({ params: { id } }) {
-	//fetch md here with id
 	const { content, data } = await getPostById(id)
 	const mdx = await renderToString(content, {
 		mdxOptions: {},
