@@ -3,6 +3,7 @@ import DefaultLayout from '../_layouts/default'
 import { getAllPosts } from 'api'
 import Image from 'next/image'
 import NextLink from 'next/link'
+import { take } from 'ramda'
 
 export interface postFrontMatterIf {
 	title: string
@@ -41,7 +42,7 @@ const IndexPage: React.FC<indexIf> = ({ postData }) => {
 								>
 									<Heading
 										alignSelf={'center'}
-										h={'3.5rem'}
+										h={'4.5rem'}
 										size={'md'}
 										fontFamily={'main'}
 									>
@@ -79,7 +80,8 @@ const IndexPage: React.FC<indexIf> = ({ postData }) => {
 export default IndexPage
 
 export async function getStaticProps() {
-	const postData = await getAllPosts()
+	const data = await getAllPosts()
+	const postData = take(2)(data)
 
 	return {
 		props: {

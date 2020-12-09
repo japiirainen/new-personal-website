@@ -1,4 +1,4 @@
-import { Box, chakra, Flex, Heading, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react'
+import { chakra, Flex, Heading, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react'
 import DefaultLayout from '../../_layouts/default'
 import { getAllPosts } from 'api'
 import NextLink from 'next/link'
@@ -82,7 +82,6 @@ export default IndexPage
 
 export async function getStaticProps() {
 	const postData = await getAllPosts()
-
 	return {
 		props: {
 			postData,
