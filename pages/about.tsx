@@ -12,7 +12,14 @@ import DefaultLayout from '_layouts/default'
 import { GrBrush, GrReactjs } from 'react-icons/gr'
 import { IconType } from 'react-icons/lib'
 import { FaLanguage } from 'react-icons/fa'
-import { IoLogoJavascript, IoLogoNodejs, IoIosBeer, IoIosBicycle } from 'react-icons/io'
+import {
+	IoLogoJavascript,
+	IoLogoNodejs,
+	IoIosBeer,
+	IoIosBicycle,
+	IoIosBasketball,
+	IoMdBaseball,
+} from 'react-icons/io'
 import { SiTypescript, SiHaskell, SiClojure, SiPython, SiKubernetes } from 'react-icons/si'
 import { BiServer } from 'react-icons/bi'
 import { AiOutlineCloudServer } from 'react-icons/ai'
@@ -48,10 +55,13 @@ const PersonalInfo: React.FC = () => {
 				</Heading>
 				<UnorderedList spacing={3} p={2}>
 					<MyListItem
-						label={'Drinking beer'}
-						desc={'This is my favorite hobby'}
-						icon={IoIosBeer}
+						label={'Working out'}
+						desc={
+							'As a former professional athele I`m still kind of addicted to working out. As time has gone on after I quit I have been getting a bit lazier all the time but I want to keep working out a part of my life for as long as I decide to spend time on this planet of ours.'
+						}
+						icon={IoMdBaseball}
 					/>
+					<MyListItem label={'Drinking beer'} desc={'Self explanatory'} icon={IoIosBeer} />
 				</UnorderedList>
 			</Flex>
 		</>
