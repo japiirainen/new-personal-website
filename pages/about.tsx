@@ -17,7 +17,6 @@ import {
 	IoLogoNodejs,
 	IoIosBeer,
 	IoIosBicycle,
-	IoIosBasketball,
 	IoMdBaseball,
 } from 'react-icons/io'
 import { SiTypescript, SiHaskell, SiClojure, SiPython, SiKubernetes } from 'react-icons/si'
