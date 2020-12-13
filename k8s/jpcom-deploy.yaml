@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jpcom-deployment
+  name: jpcom
   namespace: default
   labels:
     app: jpcom
@@ -49,11 +49,11 @@ kind: Service
 metadata:
   labels:
     app: jpcom
-  name: jpcom-service
+  name: jpcom
   namespace: default
 spec:
   selector:
-    app: jpcom-deployment
+    app: jpcom
   sessionAffinity: None
   type: NodePort
   ports:
