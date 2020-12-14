@@ -20,6 +20,46 @@ export const config: configIf = {
 		linkedin: 'https://www.linkedin.com/in/joona-piirainen-a026351a8/',
 	},
 }
+
+export interface projectDataIf {
+	id: number
+	name: string
+	publiUrl: string
+	githubUrl: string
+	image: string
+	smallDesc: string
+}
+
+export const projectData: Array<projectDataIf> = [
+	{
+		id: 1,
+		name: 'Js-Quiz',
+		githubUrl: 'https://github.com/japiirainen/js-quiz',
+		publiUrl: 'js-quiz.me',
+		smallDesc: 'Website for learning JavaScript...',
+		image:
+			'https://images.unsplash.com/photo-1516534775068-ba3e7458af70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80',
+	},
+	{
+		id: 2,
+		name: 'Oluet-api',
+		githubUrl: 'https://github.com/japiirainen/oluet-api',
+		publiUrl: 'todo.com',
+		smallDesc: 'API for querying beer...',
+		image:
+			'https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80',
+	},
+	{
+		id: 3,
+		name: 'Var-lib-showcase',
+		githubUrl: 'https://github.com/japiirainen/var-lib-dpkg-status-showcase',
+		publiUrl: 'https://reactor-pre-assignment.herokuapp.com/',
+		smallDesc: 'Coding challenge by Reaktor...',
+		image:
+			'https://s3.eu-north-1.amazonaws.com/japiirainen.com/Screenshot+2020-12-14+at+19.22.41.png',
+	},
+]
+
 export const getAllPosts = async () => {
 	const res = await fetch('https://api.github.com/users/japiirainen/gists', {
 		headers: {

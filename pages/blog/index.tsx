@@ -33,7 +33,7 @@ const IndexPage: React.FC<indexIf> = ({ postData }) => {
 			<SimpleGrid columns={1} spacing={4} pb={180}>
 				{postData.map((v, i) => {
 					return (
-						<NextLink key={i} href={{ pathname: '/blog/[id]', query: { id: v.id } }}>
+						<NextLink key={i} href={{ pathname: '/blog/[id]', query: { id: String(v.id) } }}>
 							<a>
 								<Flex
 									direction={'column'}

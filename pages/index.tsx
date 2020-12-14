@@ -1,9 +1,9 @@
-import { Flex, Heading, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react'
 import DefaultLayout from '../_layouts/default'
-import { getAllPosts } from 'api'
+import { getAllPosts, projectData } from 'api'
 import { take } from 'ramda'
 import { RecentPosts } from 'components/RecentPosts'
 import { WelcomeMessage } from 'components/WelcomeMessage'
+import { Projects } from 'components/Projects'
 
 export interface postFrontMatterIf {
 	title: string
@@ -19,9 +19,10 @@ interface indexIf {
 
 const IndexPage: React.FC<indexIf> = ({ postData }) => {
 	return (
-		<DefaultLayout title={'Joona Piirainen'} description={'Personal website'}>
+		<DefaultLayout title={'Joona Piirainen'} description={'Personal website'} pb={200}>
 			<WelcomeMessage />
 			<RecentPosts postData={postData} />
+			<Projects projectData={projectData} />
 		</DefaultLayout>
 	)
 }

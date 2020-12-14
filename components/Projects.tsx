@@ -1,24 +1,20 @@
-import React from 'react'
+import { Flex, Heading, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react'
+import { projectDataIf } from 'api'
 import Image from 'next/image'
 import NextLink from 'next/link'
-import { Heading, SimpleGrid, Flex, Text, useColorModeValue } from '@chakra-ui/react'
-import { postFrontMatterIf } from 'pages'
+import React from 'react'
 
-interface RecentPostsProps {
-	postData: Array<postFrontMatterIf>
-}
-
-export const RecentPosts: React.FC<RecentPostsProps> = ({ postData }) => {
-	const postHoverBg = useColorModeValue('neonGreen.100', 'neonPurple.200')
+export const Projects: React.FC<{ projectData: Array<projectDataIf> }> = ({ projectData }) => {
+	const hoverBg = useColorModeValue('neonGreen.100', 'neonPurple.200')
 	return (
 		<>
-			<Heading textAlign={'center'} fontFamily={'main'} w={'100%'} my={5}>
-				Recent blog posts
+			<Heading mb={10} mt={35} fontFamily={'main'} textAlign={'center'}>
+				Some of my personal projects
 			</Heading>
 			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
-				{postData.map((v, i) => {
+				{projectData.map((v, i) => {
 					return (
-						<NextLink key={i} href={{ pathname: '/blog/[id]', query: { id: v.id } }}>
+						<NextLink key={i} href={{ pathname: '/projects/[id]', query: { id: v.id } }}>
 							<a>
 								<Flex
 									direction={'column'}
@@ -29,7 +25,7 @@ export const RecentPosts: React.FC<RecentPostsProps> = ({ postData }) => {
 									borderColor={'gray.300'}
 									py={3}
 									px={1}
-									_hover={{ background: postHoverBg, border: '2px' }}
+									_hover={{ background: hoverBg, border: '2px' }}
 								>
 									<Heading
 										alignSelf={'center'}
@@ -37,10 +33,10 @@ export const RecentPosts: React.FC<RecentPostsProps> = ({ postData }) => {
 										size={'md'}
 										fontFamily={'main'}
 									>
-										{v.title}
+										{v.name}
 									</Heading>
 									<Image
-										src={v.mainImage}
+										src={v.image}
 										alt={'image' + v}
 										layout={'responsive'}
 										width={'100%'}
@@ -53,10 +49,7 @@ export const RecentPosts: React.FC<RecentPostsProps> = ({ postData }) => {
 										</Text>
 									</Flex>
 									<Flex pt={1}>
-										<Text fontFamily={'main'}>{v.date}</Text>
-										<Text ml={'auto'} fontFamily={'main'}>
-											{v.readTime}
-										</Text>
+										<Text fontFamily={'main'}>{v.smallDesc}</Text>
 									</Flex>
 								</Flex>
 							</a>
