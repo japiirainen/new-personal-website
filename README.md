@@ -5,3 +5,4 @@
 - design header 
 - design footer
 - figure out how md works...
+- email validations
