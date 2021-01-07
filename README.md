@@ -1,4 +1,3 @@
- New personal website for my blog + showcasing personal projects
+# japiirainen.com
 
-## todo
-- This goes in the .orf file now!
+New personal website for my blog + showcasing personal projects
