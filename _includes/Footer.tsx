@@ -39,24 +39,24 @@ const FooterSocials: React.FC = () => {
 	return (
 		<>
 			<NextLink href={github}>
-				<a target={'_blank'}>
+				<chakra.a _hover={{ color: 'GrayText', cursor: 'pointer' }} target={'_blank'}>
 					<SocialIcon as={ImGithub} />
-				</a>
+				</chakra.a>
 			</NextLink>
 			<NextLink href={instagram}>
-				<a target={'_blank'}>
+				<chakra.a _hover={{ color: 'GrayText', cursor: 'pointer' }} target={'_blank'}>
 					<SocialIcon as={ImInstagram} />
-				</a>
+				</chakra.a>
 			</NextLink>
 			<NextLink href={twitter}>
-				<a target={'_blank'}>
+				<chakra.a _hover={{ color: 'GrayText', cursor: 'pointer' }} target={'_blank'}>
 					<SocialIcon as={ImTwitter} />
-				</a>
+				</chakra.a>
 			</NextLink>
 			<NextLink href={linkedin}>
-				<a target={'_blank'}>
+				<chakra.a _hover={{ color: 'GrayText', cursor: 'pointer' }} target={'_blank'}>
 					<SocialIcon as={ImLinkedin2} />
-				</a>
+				</chakra.a>
 			</NextLink>
 		</>
 	)
@@ -85,7 +85,7 @@ export const Footer: React.FC = () => {
 				ml={{ base: 'auto', md: 2 }}
 			>
 				<FooterLinks />
-				<Text fontFamily={'main'} fontSize={{ base: 'sm', md: 'md' }}>
+				<Text ml={2} fontFamily={'main'} fontSize={{ base: 'sm', md: 'md' }}>
 					© 2020 Joona Piirainen All Rights Reserved
 				</Text>
 			</Flex>

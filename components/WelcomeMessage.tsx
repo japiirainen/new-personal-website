@@ -1,30 +1,12 @@
 import React from 'react'
-import {
-	Heading,
-	Avatar,
-	Flex,
-	Text,
-	useColorModeValue,
-	Divider,
-	useBreakpoint,
-} from '@chakra-ui/react'
+import { Avatar, Flex, Text, useColorModeValue, chakra } from '@chakra-ui/react'
+import { config } from 'api'
 
 export const WelcomeMessage: React.FC = () => {
-	const hoverBg = useColorModeValue('neonGreen.100', 'neonPurple.200')
-	const bp = useBreakpoint()
+	const linkColor = useColorModeValue('neonGreen.500', 'neonPurple.200')
 	return (
 		<>
-			<Heading fontFamily={'main'} textAlign={'center'}>
-				Welcome to my website!
-			</Heading>
-			<Flex
-				justifyContent={'flex-start'}
-				p={3}
-				my={10}
-				border={'1px'}
-				borderColor={'gray.300'}
-				_hover={{ border: '2px', borderColor: hoverBg }}
-			>
+			<Flex justifyContent={'flex-start'} p={3} mt={10} mb={20}>
 				<Avatar
 					size={'lg'}
 					src={
@@ -38,19 +20,19 @@ export const WelcomeMessage: React.FC = () => {
 						justifyContent={'center'}
 						flexDirection={'column'}
 					>
-						<Text fontFamily={'main'}>Joona Piirainen</Text>
-						<Text fontFamily={'main'}>22 year old Software Engineer</Text>
-					</Flex>
-					{bp === 'sm' && <Divider mt={10} />}
-					<Flex
-						ml={5}
-						alignContent={'center'}
-						justifyContent={'center'}
-						flexDirection={'column'}
-						mt={{ base: 5, md: 0 }}
-					>
-						<Text fontFamily={'main'}>On this website you´ll find..</Text>
-						<Text fontFamily={'main'}>My blog and other stuff created by yours truly</Text>
+						<Text fontFamily={'main'}>
+							Personal website by{' '}
+							<chakra.a
+								fontStyle={'italic'}
+								color={linkColor}
+								textDecoration={'underline'}
+								href={config.socials.github}
+								target={'_blank'}
+							>
+								Joona Piirainen
+							</chakra.a>
+						</Text>
+						<Text fontFamily={'main'}>All things tech related</Text>
 					</Flex>
 				</Flex>
 			</Flex>

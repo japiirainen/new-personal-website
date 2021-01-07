@@ -9,7 +9,7 @@ import {
 	useBreakpointValue,
 } from '@chakra-ui/react'
 import DefaultLayout from '_layouts/default'
-import { GrBrush, GrReactjs } from 'react-icons/gr'
+import { GrGolang, GrReactjs } from 'react-icons/gr'
 import { IconType } from 'react-icons/lib'
 import { FaLanguage } from 'react-icons/fa'
 import {
@@ -22,6 +22,7 @@ import {
 import { SiTypescript, SiHaskell, SiClojure, SiPython, SiKubernetes } from 'react-icons/si'
 import { BiServer } from 'react-icons/bi'
 import { AiOutlineCloudServer } from 'react-icons/ai'
+import { ImPencil2 } from 'react-icons/im'
 
 const MyListItem: React.FC<{ label: string; icon: IconType; desc: string }> = ({
 	label,
@@ -47,7 +48,7 @@ const PersonalInfo: React.FC = () => {
 			<Heading size={headingSize} fontFamily={'main'} textAlign={'center'}>
 				About Joona...
 			</Heading>
-			<Flex my={5} flexDirection={'column'} border={'1px'}>
+			<Flex mt={5} mb={20} pl={3} flexDirection={'column'} border={'1px'}>
 				<Heading size={heading2Size} fontFamily={'main'} p={4}>
 					Hobbies
 					<Icon as={IoIosBicycle} />
@@ -118,7 +119,7 @@ const ContactPage: React.FC = () => {
 					/>
 				</UnorderedList>
 				<Heading size={heading2Size} fontFamily={'main'} p={4}>
-					Frontend skills <Icon as={GrBrush} />
+					Frontend skills <Icon as={ImPencil2} />
 				</Heading>
 				<UnorderedList spacing={3} p={2}>
 					<MyListItem
@@ -139,6 +140,13 @@ const ContactPage: React.FC = () => {
 							'NodeJs is the only serverside technology I have used but I have really liked it. It´s quite nice to be able to develop both bacend and frontend apps with the same language!'
 						}
 						icon={IoLogoNodejs}
+					/>
+					<MyListItem
+						label={'Go microcervices'}
+						desc={
+							'Recently I started writing an api using go and I have to say that right now im absolutely loving it! The simplicity of the language is truly refreshing'
+						}
+						icon={GrGolang}
 					/>
 				</UnorderedList>
 				<Heading size={heading2Size} fontFamily={'main'} p={4}>
