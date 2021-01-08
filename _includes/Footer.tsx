@@ -30,40 +30,54 @@ const FooterLinks: React.FC = () => {
 		</Flex>
 	)
 }
-const SocialIcon: React.FC<{ as }> = ({ as }) => <Icon as={as} w={8} h={8} mx={2} />
+export const SocialIcon: React.FC<{ as }> = ({ as }) => <Icon as={as} w={8} h={8} mx={2} />
 
 const FooterSocials: React.FC = () => {
+	const socialIconColor = useColorModeValue('black', 'white')
+	const socialIconHoverColor = useColorModeValue('GrayText', 'neonPurple.200')
 	const {
 		socials: { github, instagram, linkedin, twitter },
 	} = config
 	return (
 		<>
-			<NextLink href={github}>
-				<chakra.a _hover={{ color: 'GrayText', cursor: 'pointer' }} target={'_blank'}>
-					<SocialIcon as={ImGithub} />
-				</chakra.a>
-			</NextLink>
-			<NextLink href={instagram}>
-				<chakra.a _hover={{ color: 'GrayText', cursor: 'pointer' }} target={'_blank'}>
-					<SocialIcon as={ImInstagram} />
-				</chakra.a>
-			</NextLink>
-			<NextLink href={twitter}>
-				<chakra.a _hover={{ color: 'GrayText', cursor: 'pointer' }} target={'_blank'}>
-					<SocialIcon as={ImTwitter} />
-				</chakra.a>
-			</NextLink>
-			<NextLink href={linkedin}>
-				<chakra.a _hover={{ color: 'GrayText', cursor: 'pointer' }} target={'_blank'}>
-					<SocialIcon as={ImLinkedin2} />
-				</chakra.a>
-			</NextLink>
+			<chakra.a
+				href={github}
+				_hover={{ color: socialIconHoverColor, cursor: 'pointer' }}
+				target={'_blank'}
+				color={socialIconColor}
+			>
+				<SocialIcon as={ImGithub} />
+			</chakra.a>
+			<chakra.a
+				href={instagram}
+				_hover={{ color: socialIconHoverColor, cursor: 'pointer' }}
+				target={'_blank'}
+				color={socialIconColor}
+			>
+				<SocialIcon as={ImInstagram} />
+			</chakra.a>
+			<chakra.a
+				href={twitter}
+				_hover={{ color: socialIconColor, cursor: 'pointer' }}
+				target={'_blank'}
+				color={socialIconColor}
+			>
+				<SocialIcon as={ImTwitter} />
+			</chakra.a>
+			<chakra.a
+				href={linkedin}
+				_hover={{ color: socialIconHoverColor, cursor: 'pointer' }}
+				target={'_blank'}
+				color={socialIconColor}
+			>
+				<SocialIcon as={ImLinkedin2} />
+			</chakra.a>
 		</>
 	)
 }
 
 export const Footer: React.FC = () => {
-	const footerColor = useColorModeValue('gray.100', 'neonPurple.200')
+	const footerColor = useColorModeValue('gray.100', 'black')
 	return (
 		<Flex
 			as={'footer'}

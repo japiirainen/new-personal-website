@@ -29,7 +29,8 @@ const NavContent = () => {
 }
 
 export const Nav: React.FC = ({ children }) => {
-	const navbg = useColorModeValue('neonGreen.400', 'neonPurple.300')
+	const navbg = useColorModeValue('neonGreen.400', 'black')
+	const borderBColor = useColorModeValue('black', 'transparent')
 	return (
 		<Flex
 			as={'nav'}
@@ -46,7 +47,7 @@ export const Nav: React.FC = ({ children }) => {
 			boxSizing={'content-box'}
 			style={{ boxShadow: '0 1px 2px 0 #bababa' }}
 			borderBottom={'1px'}
-			borderBottomColor={'black'}
+			borderBottomColor={borderBColor}
 		>
 			<NavContent />
 			{children}

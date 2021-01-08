@@ -5,7 +5,7 @@ type colorModeT = { colorMode: 'dark' } | { colorMode: 'light' }
 const styles = {
 	global: ({ colorMode }: colorModeT) => ({
 		'html, body': {
-			bg: colorMode === 'dark' ? 'gray.900' : 'white',
+			bg: colorMode === 'dark' ? 'black' : 'white',
 		},
 		'div#blogpost': {
 			pre: {

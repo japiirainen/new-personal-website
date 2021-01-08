@@ -24,8 +24,9 @@ export const config: configIf = {
 export interface projectDataIf {
 	id: number
 	name: string
-	publiUrl: string
+	publiUrl?: string
 	githubUrl: string
+	npmUrl?: string
 	image: string
 	smallDesc: string
 }
@@ -38,7 +39,7 @@ export const projectData: Array<projectDataIf> = [
 		publiUrl: 'js-quiz.me',
 		smallDesc: 'Website for learning JavaScript...',
 		image:
-			'https://images.unsplash.com/photo-1516534775068-ba3e7458af70?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80',
+			'https://images.unsplash.com/photo-1468070454955-c5b6932bd08d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
 	},
 	{
 		id: 2,
@@ -57,6 +58,15 @@ export const projectData: Array<projectDataIf> = [
 		smallDesc: 'Coding challenge by Reaktor...',
 		image:
 			'https://s3.eu-north-1.amazonaws.com/japiirainen.com/Screenshot+2020-12-14+at+19.22.41.png',
+	},
+	{
+		id: 4,
+		name: 'Generate-config',
+		githubUrl: 'https://github.com/japiirainen/generate-config',
+		npmUrl: 'https://www.npmjs.com/package/generate-config',
+		smallDesc: 'Small CLI for genarating boilerplate code...',
+		image:
+			'https://images.unsplash.com/photo-1490557162706-284736f48784?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80',
 	},
 ]
 

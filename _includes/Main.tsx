@@ -9,7 +9,7 @@ interface mainProps {
 }
 
 export const Main: React.FC<mainProps> = ({ variant, pb = 0, children }) => {
-	const mainBg = useColorModeValue('white', 'gray.900')
+	const mainBg = useColorModeValue('white', 'black')
 	return (
 		<Box
 			pt={{ base: 40, md: 20 }}
