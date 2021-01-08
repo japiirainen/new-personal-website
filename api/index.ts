@@ -29,6 +29,7 @@ export interface projectDataIf {
 	npmUrl?: string
 	image: string
 	smallDesc: string
+	description: string
 }
 
 export const projectData: Array<projectDataIf> = [
@@ -40,15 +41,18 @@ export const projectData: Array<projectDataIf> = [
 		smallDesc: 'Website for learning JavaScript...',
 		image:
 			'https://images.unsplash.com/photo-1468070454955-c5b6932bd08d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+		description:
+			'A website for playing around with javascript. More info at the projects github repo!',
 	},
 	{
 		id: 2,
 		name: 'Oluet-api',
-		githubUrl: 'https://github.com/japiirainen/oluet-api',
+		githubUrl: 'https://github.com/japiirainen/go-oluet-api',
 		publiUrl: 'todo.com',
 		smallDesc: 'API for querying beer...',
 		image:
 			'https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80',
+		description: '',
 	},
 	{
 		id: 3,
@@ -58,6 +62,7 @@ export const projectData: Array<projectDataIf> = [
 		smallDesc: 'Coding challenge by Reaktor...',
 		image:
 			'https://s3.eu-north-1.amazonaws.com/japiirainen.com/Screenshot+2020-12-14+at+19.22.41.png',
+		description: 'A website for playing around with javascript.',
 	},
 	{
 		id: 4,
@@ -67,6 +72,7 @@ export const projectData: Array<projectDataIf> = [
 		smallDesc: 'Small CLI for genarating boilerplate code...',
 		image:
 			'https://images.unsplash.com/photo-1490557162706-284736f48784?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80',
+		description: 'A website for playing around with javascript.',
 	},
 ]
 

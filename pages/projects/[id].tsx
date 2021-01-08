@@ -11,9 +11,11 @@ const Post: React.FC<projectif> = ({ data }) => {
 			name={data.name}
 			image={data.image}
 			publiUrl={data.publiUrl}
-			githubUrl={data.publiUrl}
+			githubUrl={data.githubUrl}
 			id={data.id}
 			smallDesc={data.smallDesc}
+			description={data.description}
+			npmUrl={data.npmUrl}
 		/>
 	)
 }
@@ -22,6 +24,7 @@ export default Post
 
 export async function getStaticProps({ params: { id } }) {
 	const data = projectData.find(v => v.id === +id)
+
 	return {
 		props: {
 			data,

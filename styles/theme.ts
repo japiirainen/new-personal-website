@@ -42,7 +42,7 @@ const styles = {
 
 const config = {
 	useSystemColorMode: false,
-	initialColorMode: 'light',
+	initialColorMode: 'dark',
 }
 
 const colors = {
