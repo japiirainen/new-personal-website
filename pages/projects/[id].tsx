@@ -16,6 +16,7 @@ const Post: React.FC<projectif> = ({ data }) => {
 			smallDesc={data.smallDesc}
 			description={data.description}
 			npmUrl={data.npmUrl}
+			technologies={data.technologies}
 		/>
 	)
 }

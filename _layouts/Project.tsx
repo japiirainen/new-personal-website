@@ -5,7 +5,11 @@ import {
 	chakra,
 	Flex,
 	Heading,
+	Link,
+	ListItem,
+	Text,
 	Tooltip,
+	UnorderedList,
 	useBreakpointValue,
 	useColorModeValue,
 } from '@chakra-ui/react'
@@ -27,6 +31,7 @@ const ProjectLayout: React.FC<projectDataIf> = ({
 	smallDesc,
 	description,
 	npmUrl,
+	technologies,
 }) => {
 	const hoverBg = useColorModeValue('neonGreen.100', 'neonPurple.200')
 	const mt = useBreakpointValue({ base: -150, md: -10 })
@@ -91,6 +96,23 @@ const ProjectLayout: React.FC<projectDataIf> = ({
 						wordBreak={'break-word'}
 					>
 						{description}
+					</Box>
+					<Heading size={'lg'} my={5} fontFamily={'main'}>
+						Technologies
+					</Heading>
+					<UnorderedList spacing={2}>
+						{technologies.map((v, i) => {
+							return (
+								<Flex key={i}>
+									<ListItem>{v}</ListItem>
+								</Flex>
+							)
+						})}
+					</UnorderedList>
+					<Box mt={5}>
+						<Link target={'_blank'} href={githubUrl}>
+							More info at github
+						</Link>
 					</Box>
 					<NavButton mx={-1} my={5} onClick={() => router.push('/')} label={'<- back home'} />
 				</Main>

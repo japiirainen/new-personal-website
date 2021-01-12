@@ -100,7 +100,7 @@ export const Footer: React.FC = () => {
 			>
 				<FooterLinks />
 				<Text ml={2} fontFamily={'main'} fontSize={{ base: 'sm', md: 'md' }}>
-					© 2020 Joona Piirainen All Rights Reserved
+					© 2021 Joona Piirainen All Rights Reserved
 				</Text>
 			</Flex>
 			<Flex
