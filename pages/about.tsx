@@ -61,7 +61,13 @@ const PersonalInfo: React.FC = () => {
 						}
 						icon={IoMdBaseball}
 					/>
-					<MyListItem label={'Drinking beer'} desc={'Self explanatory'} icon={IoIosBeer} />
+					<MyListItem
+						label={'Beer'}
+						desc={
+							'Huge fan of trying different kinds of beer. Only occasionally in larger doses :-). Even made an API for querying informaiton on all kinds of alcoholic beverages including beer.'
+						}
+						icon={IoIosBeer}
+					/>
 				</UnorderedList>
 			</Flex>
 		</>
