@@ -7,7 +7,6 @@ import {
 	Heading,
 	Link,
 	ListItem,
-	Text,
 	Tooltip,
 	UnorderedList,
 	useBreakpointValue,

@@ -30,46 +30,36 @@ const FooterLinks: React.FC = () => {
 		</Flex>
 	)
 }
-export const SocialIcon: React.FC<{ as }> = ({ as }) => <Icon as={as} w={8} h={8} mx={2} />
+export const SocialIcon: React.FC<{ as }> = ({ as }) => {
+	const socialIconHoverColor = useColorModeValue('GrayText', 'white')
+	return (
+		<Icon
+			_hover={{ color: socialIconHoverColor, cursor: 'pointer' }}
+			color={'red.200'}
+			as={as}
+			w={8}
+			h={8}
+			mx={2}
+		/>
+	)
+}
 
 const FooterSocials: React.FC = () => {
-	const socialIconColor = useColorModeValue('black', 'white')
-	const socialIconHoverColor = useColorModeValue('GrayText', 'neonPurple.200')
 	const {
 		socials: { github, instagram, linkedin, twitter },
 	} = config
 	return (
 		<>
-			<chakra.a
-				href={github}
-				_hover={{ color: socialIconHoverColor, cursor: 'pointer' }}
-				target={'_blank'}
-				color={socialIconColor}
-			>
+			<chakra.a href={github} target={'_blank'}>
 				<SocialIcon as={ImGithub} />
 			</chakra.a>
-			<chakra.a
-				href={instagram}
-				_hover={{ color: socialIconHoverColor, cursor: 'pointer' }}
-				target={'_blank'}
-				color={socialIconColor}
-			>
+			<chakra.a href={instagram} target={'_blank'}>
 				<SocialIcon as={ImInstagram} />
 			</chakra.a>
-			<chakra.a
-				href={twitter}
-				_hover={{ color: socialIconColor, cursor: 'pointer' }}
-				target={'_blank'}
-				color={socialIconColor}
-			>
+			<chakra.a href={twitter} target={'_blank'}>
 				<SocialIcon as={ImTwitter} />
 			</chakra.a>
-			<chakra.a
-				href={linkedin}
-				_hover={{ color: socialIconHoverColor, cursor: 'pointer' }}
-				target={'_blank'}
-				color={socialIconColor}
-			>
+			<chakra.a href={linkedin}>
 				<SocialIcon as={ImLinkedin2} />
 			</chakra.a>
 		</>
