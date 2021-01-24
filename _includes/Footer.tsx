@@ -31,11 +31,12 @@ const FooterLinks: React.FC = () => {
 	)
 }
 export const SocialIcon: React.FC<{ as }> = ({ as }) => {
-	const socialIconHoverColor = useColorModeValue('GrayText', 'white')
+	const socialIconHoverColor = useColorModeValue('GrayText', 'GrayText')
+	const socialIconColor = useColorModeValue('black', 'white')
 	return (
 		<Icon
 			_hover={{ color: socialIconHoverColor, cursor: 'pointer' }}
-			color={'red.200'}
+			color={socialIconColor}
 			as={as}
 			w={8}
 			h={8}

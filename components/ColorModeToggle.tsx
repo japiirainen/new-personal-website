@@ -5,9 +5,9 @@ import { FaRegMoon, FaRegSun } from 'react-icons/fa'
 export const ColorModeToggle = () => {
 	const { toggleColorMode, colorMode } = useColorMode()
 	const whichIcon = colorMode === 'dark' ? FaRegSun : FaRegMoon
-	const hoverBg = useColorModeValue('neonGreen.100', 'neonPurple.200')
-	const hoverBorderColor = useColorModeValue('black', 'white')
-	const icon = <Icon as={whichIcon} w={8} h={8} color={'red.200'} />
+	const iconColor = useColorModeValue('black', 'white')
+	const iconHover = useColorModeValue('gray.500', 'gray.500')
+	const icon = <Icon as={whichIcon} w={8} h={8} color={iconColor} _hover={{ color: iconHover }} />
 
 	return (
 		<IconButton
@@ -18,7 +18,7 @@ export const ColorModeToggle = () => {
 			onClick={toggleColorMode}
 			bg={'inherit'}
 			_focus={{ border: 'none' }}
-			_hover={{ background: hoverBg, border: '0px', borderColor: hoverBorderColor }}
+			_hover={{ background: 'none', border: 'none' }}
 			p={2}
 		/>
 	)
