@@ -1,4 +1,5 @@
 import {
+	chakra,
 	Flex,
 	Heading,
 	Icon,
@@ -7,6 +8,7 @@ import {
 	Text,
 	UnorderedList,
 	useBreakpointValue,
+	useColorModeValue,
 } from '@chakra-ui/react'
 import DefaultLayout from '_layouts/default'
 import { GrGolang, GrReactjs } from 'react-icons/gr'
@@ -43,11 +45,26 @@ const MyListItem: React.FC<{ label: string; icon: IconType; desc: string }> = ({
 const PersonalInfo: React.FC = () => {
 	const headingSize = useBreakpointValue({ base: 'md', md: 'lg' })
 	const heading2Size = useBreakpointValue({ base: 'sm', md: 'md' })
+	const linkColor = useColorModeValue('neonGreen.500', 'neonPurple.200')
 	return (
 		<>
 			<Heading size={headingSize} fontFamily={'main'} textAlign={'center'}>
 				About Joona...
 			</Heading>
+			<Text fontSize={20} fontFamily={'main'} mt={5}>
+				Link to my awesome
+				<chakra.a
+					fontStyle={'italic'}
+					color={linkColor}
+					textDecoration={'underline'}
+					href={'https://cv.japiirainen.com'}
+					target={'_blank'}
+					mx={2}
+				>
+					CV
+				</chakra.a>
+				made using Graphql
+			</Text>
 			<Flex mt={5} mb={20} pl={3} flexDirection={'column'} border={'1px'}>
 				<Heading size={heading2Size} fontFamily={'main'} p={4}>
 					Hobbies
