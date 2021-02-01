@@ -21,6 +21,7 @@ const IndexPage: React.FC<indexIf> = ({ postData }) => {
 	return (
 		<DefaultLayout title={'Joona Piirainen'} description={'Personal website'} pb={200}>
 			<WelcomeMessage />
+			<WelcomeMessage />
 			<RecentPosts postData={postData} />
 			<Projects projectData={projectData} />
 		</DefaultLayout>
