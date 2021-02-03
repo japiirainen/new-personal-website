@@ -31,7 +31,7 @@ const styles = {
 				ml: 10,
 			},
 			p: {
-				my: 10,
+				my: 6,
 			},
 			a: {
 				color: 'blue',
