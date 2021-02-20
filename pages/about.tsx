@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import {
 	chakra,
 	Flex,
@@ -24,13 +25,13 @@ import {
 import {
 	SiTypescript,
 	SiHaskell,
-	SiClojure,
 	SiPython,
 	SiKubernetes,
 	SiRust,
 	SiPostgresql,
 	SiMongodb,
 	SiElasticsearch,
+	SiPurescript,
 } from 'react-icons/si'
 import { BiServer } from 'react-icons/bi'
 import { AiOutlineCloudServer } from 'react-icons/ai'
@@ -108,7 +109,7 @@ const ContactPage: React.FC = () => {
 		<DefaultLayout description={'about me'} title={'about'} pb={200}>
 			<PersonalInfo />
 			<Heading size={headingSize} fontFamily={'main'} textAlign={'center'}>
-				Tech skill I have acquired during my time developing software
+				Tech skill I've acquired during my time developing software
 			</Heading>
 			<Flex mt={5} pl={3} flexDirection={'column'} border={'1px'}>
 				<Heading size={heading2Size} fontFamily={'main'} p={4}>
@@ -130,25 +131,25 @@ const ContactPage: React.FC = () => {
 						icon={IoLogoJavascript}
 					/>
 					<MyListItem
+						label={'Haskell'}
+						desc={
+							'I´m definitely not an Haskell expert but I have been studying it quite a bit recently. I think it´s a very interesting language and I would love to get better at it. I´m really starting to see the benefits from learning these functional languages and more importantly the ideas they bring to programming. These ideas can also be used with JavaScript and TypeScript to impreve the quality of the code I am writing.'
+						}
+						icon={SiHaskell}
+					/>
+					<MyListItem
+						label={'PureScript'}
+						desc={
+							'I wanted an alternative for JavaScript or TypeScript for frontend applications. If you are not familiar with PureScript, it is semantically very similar to Haskell. It compiles to JavaScript which allows it to run on browsers.'
+						}
+						icon={SiPurescript}
+					/>
+					<MyListItem
 						label={'Rust'}
 						desc={
 							'I wanted to try to learn a systems level programming language and Rust seemed like a cool choice. It is quite "functional programming" oriented and thats why I chose is over C and C++. I`ve built some small CLI:s with it and it seems like a good and super fast language for that. I have also planned to try it for some web development.'
 						}
 						icon={SiRust}
-					/>
-					<MyListItem
-						label={'Haskell'}
-						desc={
-							'Ok, so I´m definitely not an Haskell expert but I have been studying it quite a bit resently. I think it´s a very interesting language and I would love to get better at it.'
-						}
-						icon={SiHaskell}
-					/>
-					<MyListItem
-						label={'Clojure'}
-						desc={
-							'I´m trying to pick up clojure since I love FP and I think it might be a bit more practical than Haskell and theres a lot more jobs in Clojure. But I think theres some super intelligent peaple behind the language Clojure and it seems like quite an amazing language.'
-						}
-						icon={SiClojure}
 					/>
 					<MyListItem
 						label={'Python'}
