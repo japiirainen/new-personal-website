@@ -9,9 +9,7 @@ export const WelcomeMessage: React.FC = () => {
 			<Flex justifyContent={'flex-start'} p={3} mt={10} mb={20}>
 				<Avatar
 					size={'lg'}
-					src={
-						'https://s3.eu-north-1.amazonaws.com/japiirainen.com/F9A7812E-DF18-4890-9864-4C99E16E106B.jpeg'
-					}
+					src={'https://s3.eu-north-1.amazonaws.com/japiirainen.com/joonabwnobg.jpg'}
 				/>
 				<Flex direction={{ base: 'column', md: 'row' }}>
 					<Flex
