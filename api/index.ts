@@ -38,7 +38,7 @@ export const projectData: Array<projectDataIf> = [
 		id: 1,
 		name: 'Js-Quiz',
 		githubUrl: 'https://github.com/japiirainen/js-quiz',
-		publiUrl: 'js-quiz.me',
+		publiUrl: 'https://js-quiz.me',
 		smallDesc: 'Website for learning JavaScript...',
 		image:
 			'https://images.unsplash.com/photo-1468070454955-c5b6932bd08d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
@@ -57,7 +57,7 @@ export const projectData: Array<projectDataIf> = [
 		description: `Have you ever wanted to search through Alko's expansive back catalogue of beer and other drinks in a programmatic way? Maybe build a tool that pairs drinks with food? Or maybe just try to find beer an abv of more than 5% Well now you can finally do that!
 
 		Oluet API takes Alko's catalogue and makes it searchable through an Graphql endpoint! And on top of all that it's completely free and open source!
-		
+
 		But that's not where the fun stops :-). Oluet API also takes collects the pricehistory for all the products in Alko's selection and makes it possible to query past and current prices easily!`,
 		technologies: ['Go', 'Graphql', 'Postgres', 'Docker'],
 	},
