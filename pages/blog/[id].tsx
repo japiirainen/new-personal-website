@@ -37,9 +37,12 @@ export async function getStaticProps({ params: { id } }) {
 }
 
 export async function getStaticPaths() {
-	const res = await fetch('https://api.github.com/users/japiirainen/gists')
+	const res = await fetch('https://api.github.com/users/japiirainen/gists', {
+		headers: {
+			authorization: `token ${process.env.GITHUB_TOKEN}`,
+		},
+	})
 	const data = await res.json()
-
 	const paths = data.map(v => ({
 		params: { id: v.id },
 	}))
