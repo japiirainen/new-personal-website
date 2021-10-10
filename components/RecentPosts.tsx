@@ -17,7 +17,6 @@ export const RecentPosts: React.FC<RecentPostsProps> = ({ postData }) => {
 			</Heading>
 			<SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
 				{postData.map((v, i) => {
-					console.log(v)
 					return (
 						<NextLink key={i} href={{ pathname: '/blog/[id]', query: { id: v.id } }}>
 							<a>

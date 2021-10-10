@@ -39,7 +39,7 @@ export async function getStaticProps({ params: { id } }) {
 export async function getStaticPaths() {
 	const res = await fetch('https://api.github.com/users/japiirainen/gists', {
 		headers: {
-			authorization: `token ${process.env.GITHUB_TOKEN}`,
+			authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
 		},
 	})
 	const data = await res.json()
