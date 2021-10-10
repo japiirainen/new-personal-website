@@ -23,7 +23,7 @@ const Post: React.FC<postIf> = ({ data, content }) => {
 
 export default Post
 
-export async function getStaticProps({ params: { id } }) {
+export async function getServerSideProps({ params: { id } }) {
 	const { content, data } = await getPostById(id)
 	const mdx = await renderToString(content, {
 		mdxOptions: {},
@@ -34,18 +34,4 @@ export async function getStaticProps({ params: { id } }) {
 			content: mdx,
 		},
 	}
-}
-
-export async function getStaticPaths() {
-	const res = await fetch('https://api.github.com/users/japiirainen/gists', {
-		headers: {
-			authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
-		},
-	})
-	const data = await res.json()
-	const paths = data.map(v => ({
-		params: { id: v.id },
-	}))
-
-	return { paths, fallback: false }
 }
