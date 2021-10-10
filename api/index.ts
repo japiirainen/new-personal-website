@@ -121,7 +121,6 @@ export const getAllPosts = async () => {
 			id: blogGists[i].id,
 		}
 	})
-	console.log(blogPostData)
 	return blogPostData
 }
 
