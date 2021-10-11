@@ -80,7 +80,7 @@ const IndexPage: React.FC<indexIf> = ({ postData }) => {
 
 export default IndexPage
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
 	const postData = await getAllPosts()
 	return {
 		props: {
